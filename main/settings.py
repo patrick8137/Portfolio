@@ -120,15 +120,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'main' / 'static']
-
-import os
-from django.contrib.auth import get_user_model
-
-if os.environ.get("CREATE_SUPERUSER") == "True":
-    User = get_user_model()
-    if not User.objects.filter(username="Hari1483").exists():
-        User.objects.create_superuser(
-            username="Hari1483",
-            email="ahari1483@gmail.com",
-            password="Akruachu1*"
-        )
