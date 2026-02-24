@@ -23,11 +23,11 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 
 def create_admin(request):
-    if not User.objects.filter(username="admin").exists():
+    if not User.objects.filter(username="Hari1483").exists():
         User.objects.create_superuser(
-            username="admin",
-            email="yourmail@gmail.com",
-            password="StrongPassword123"
+            username="Hari1483",
+            email="ahari1483@gmail.com",
+            password="Akruachu1*"
         )
         return HttpResponse("Superuser created")
 
