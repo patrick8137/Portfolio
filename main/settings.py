@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-logy4_s9(_!eohcd@9)$a-rcm78s^@z#+q=_2@6iu_9hiltax=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['web-production-4a321.up.railway.app']
 
 
 # Application definition
@@ -120,3 +120,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'main' / 'static']
+
+import os
+from django.contrib.auth import get_user_model
+
+if os.environ.get("CREATE_SUPERUSER") == "True":
+    User = get_user_model()
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser(
+            username="admin",
+            email="yourmail@gmail.com",
+            password="StrongPassword123"
+        )
