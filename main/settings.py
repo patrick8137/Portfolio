@@ -126,9 +126,9 @@ from django.contrib.auth import get_user_model
 
 if os.environ.get("CREATE_SUPERUSER") == "True":
     User = get_user_model()
-    if not User.objects.filter(username="admin").exists():
+    if not User.objects.filter(username="Hari1483").exists():
         User.objects.create_superuser(
-            username="admin",
-            email="yourmail@gmail.com",
-            password="StrongPassword123"
+            username="Hari1483",
+            email="ahari1483@gmail.com",
+            password="Akruachu1*"
         )
